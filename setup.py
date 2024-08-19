@@ -27,8 +27,8 @@ class DownloadBinaryCommand(Command):
         URLS = {
             'Win32': 'https://github.com/xerusmsp/msp-tls-client/releases/download/0.1.0/tls-client-32.dll',
             'Win64': 'https://github.com/xerusmsp/msp-tls-client/releases/download/0.1.0/tls-client-64.dll',
-            'DarwinArm64': 'https://github.com/test/tls-client.so',
-            'Darwinx86': ''
+            # 'DarwinArm64': '',
+            # 'Darwinx86': ''
         }
 
         if os_type == 'Windows':

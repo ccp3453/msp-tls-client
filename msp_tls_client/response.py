@@ -3,6 +3,7 @@ from .structures import CaseInsensitiveDict
 
 from typing import Union
 import json
+import base64
 
 
 class Response:
@@ -74,5 +75,15 @@ def build_response(res: Union[dict, list], res_cookies: RequestsCookieJar) -> Re
     # Add response body
     response.text = res["body"]
     # Add response content (bytes)
-    response._content = res["body"].encode()
+    
+    #TODO: Replace this by editing the binary so it doesnt have the stupid prefix
+
+    if res["body"].startswith('data:application/octet-stream;base64,'):
+        base64_message = res["body"].split(',', 1)[1]
+    else:
+        base64_message = res["body"]
+
+    decoded_message = base64.b64decode(base64_message.encode())
+
+    response._content = decoded_message
     return response

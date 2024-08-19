@@ -1,6 +1,6 @@
-import tls_client
+import msp_tls_client
 
-session = tls_client.Session(
+session = msp_tls_client.Session(
     certificate_pinning={
         "example.com": [
             "NQvyabcS99nBqk/nZCUF44hFhshrkvxqYtfrZq3i+Ww=",

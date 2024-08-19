@@ -1,9 +1,9 @@
-# Python-TLS-Client
-Python-TLS-Client is an advanced HTTP library based on requests and tls-client.
+# Python-MSP-TLS-Client
+Python-MSP-TLS-Client is an advanced HTTP library based on requests and tls-client.
 
 # Installation
 ```
-pip install tls-client
+pip install git+https://github.com/xerusmsp/msp-tls-client.git
 ```
 
 # Examples
@@ -11,7 +11,7 @@ The syntax is inspired by [requests](https://github.com/psf/requests), so its ve
 
 Example 1 - Preset:
 ```python
-import tls_client
+import msp_tls_client
 
 # You can also use the following as `client_identifier`:
 # Chrome --> chrome_103, chrome_104, chrome_105, chrome_106, chrome_107, chrome_108, chrome109, Chrome110,
@@ -26,7 +26,7 @@ import tls_client
 #
 # more client identifiers can be found in settings.py
 
-session = tls_client.Session(
+session = msp_tls_client.Session(
     client_identifier="chrome112",
     random_tls_extension_order=True
 )
@@ -42,9 +42,9 @@ res = session.get(
 
 Example 2 - Custom:
 ```python
-import tls_client
+import msp_tls_client
 
-session = tls_client.Session(
+session = msp_tls_client.Session(
     ja3_string="771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-23-65281-10-11-35-16-5-13-18-51-45-43-27-17513,29-23-24,0",
     h2_settings={
         "HEADER_TABLE_SIZE": 65536,
@@ -102,27 +102,27 @@ res = session.post(
 
 Linux - Ubuntu / x86:
 ```
---add-binary '{path_to_library}/tls_client/dependencies/tls-client-x86.so:tls_client/dependencies'
+--add-binary '{path_to_library}/msp_tls_client/dependencies/tls-client-x86.so:msp_tls_client/dependencies'
 ```
 
 Linux Alpine / AMD64:
 ```
---add-binary '{path_to_library}/tls_client/dependencies/tls-client-amd64.so:tls_client/dependencies'
+--add-binary '{path_to_library}/msp_tls_client/dependencies/tls-client-amd64.so:msp_tls_client/dependencies'
 ```
 
 MacOS M1 and older:
 ```
---add-binary '{path_to_library}/tls_client/dependencies/tls-client-x86.dylib:tls_client/dependencies'
+--add-binary '{path_to_library}/msp_tls_client/dependencies/tls-client-x86.dylib:msp_tls_client/dependencies'
 ```
 
 MacOS M2:
 ```
---add-binary '{path_to_library}/tls_client/dependencies/tls-client-arm64.dylib:tls_client/dependencies'
+--add-binary '{path_to_library}/msp_tls_client/dependencies/tls-client-arm64.dylib:msp_tls_client/dependencies'
 ```
 
 Windows:
 ```
---add-binary '{path_to_library}/tls_client/dependencies/tls-client-64.dll;tls_client/dependencies'
+--add-binary '{path_to_library}/msp_tls_client/dependencies/tls-client-64.dll;msp_tls_client/dependencies'
 ```
 
 # Acknowledgements

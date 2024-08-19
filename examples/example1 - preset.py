@@ -1,4 +1,4 @@
-import tls_client
+import msp_tls_client
 
 # You can also use the following as `client_identifier`:
 # Chrome --> chrome_103, chrome_104, chrome_105, chrome_106, chrome_107, chrome_108, chrome109, Chrome110,
@@ -13,7 +13,7 @@ import tls_client
 #
 # more client identifiers can be found in settings.py
 
-session = tls_client.Session(
+session = msp_tls_client.Session(
     client_identifier="chrome112",
     random_tls_extension_order=True
 )

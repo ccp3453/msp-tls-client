@@ -17,7 +17,7 @@ else:
         file_ext = '-amd64.so'
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
-library = ctypes.cdll.LoadLibrary(f'{root_dir}/dependencies/msp-tls-client{file_ext}')
+library = ctypes.cdll.LoadLibrary(f'{root_dir}/dependencies/tls-client{file_ext}')
 
 # extract the exposed request function from the shared package
 request = library.request

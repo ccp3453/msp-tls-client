@@ -78,8 +78,8 @@ def build_response(res: Union[dict, list], res_cookies: RequestsCookieJar) -> Re
     
     #TODO: Replace this by editing the binary so it doesnt have the stupid prefix
 
-    if res["body"].startswith('data:application/octet-stream;base64,'):
-        base64_message = res["body"].split(',', 1)[1]
+    if 'base64,' in res["body"]:
+        base64_message = res["body"].split('base64,', 1)[1]
     else:
         base64_message = res["body"]
 
